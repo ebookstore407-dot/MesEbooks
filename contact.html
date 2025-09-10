@@ -8,12 +8,6 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function() {
-    emailjs.init("wDOUk5bab5WPy3u0A"); // Clé publique EmailJS
-  })();
-</script>
 </head>
 <body>
   <header>
@@ -32,10 +26,11 @@
 
       <div class="contact-container">
         <!-- Formulaire -->
-        <form id="contact-form" class="contact-form">
-          <input type="text" name="user_name" placeholder="Votre nom" required>
-          <input type="email" name="user_email" placeholder="Votre email" required>
+        <form class="contact-form" action="https://formspree.io/f/myzdoowe" method="POST">
+          <input type="text" name="name" placeholder="Votre nom" required>
+          <input type="email" name="email" placeholder="Votre email" required>
           <textarea name="message" placeholder="Votre avis après lecture" required></textarea>
+          <div class="g-recaptcha" data-sitekey="6LfmYMUrAAAAANbAmDEzJSPhTIaQO5LIJ1imG6H5"></div>
           <button type="submit" class="btn">Envoyer</button>
         </form>
 
@@ -58,17 +53,6 @@
     <p>&copy; 2025 Mes eBooks en ligne. Tous droits réservés.</p>
   </footer>
 </body>
-<script>
-document.getElementById("contact-form").addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  emailjs.sendForm("service_p32amdw", "template_4os7f1i", this)
-    .then(() => {
-      alert("✅ Merci ! Votre avis a bien été envoyé.");
-    }, (error) => {
-      alert("❌ Une erreur est survenue : " + JSON.stringify(error));
-    });
-});
-</script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>
