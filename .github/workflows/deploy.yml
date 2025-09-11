@@ -1,44 +1,36 @@
-name: Deploy static site
+name: Build and Deploy MesEbooks
 
 on:
   push:
     branches:
-      - main   # Déploiement automatique sur chaque push vers main
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Récupérer le dépôt
+      # 1️⃣ Cloner le dépôt
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. Installer Node.js (nécessaire pour lancer ton script)
+      # 2️⃣ Installer Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'   # tu peux mettre 20 si tu veux la dernière LTS
+          node-version: '20' # ou la version que tu utilises
 
-      # 3. Installer les dépendances (si tu as un package.json)
+      # 3️⃣ Installer les dépendances si tu as un package.json
       - name: Install dependencies
-        run: |
-          if [ -f package.json ]; then
-            npm install
-          fi
+        run: npm install || echo "No dependencies to install"
 
-      # 4. Exécuter ton script de mise à jour des ebooks
-      - name: Update ebooks.json
-        run: |
-          if [ -f addEbook.js ]; then
-            node addEbook.js
-          else
-            echo "Pas de script addEbook.js trouvé, étape ignorée."
-          fi
+      # 4️⃣ Exécuter le script Node pour préparer les ebooks
+      - name: Run ebook script
+        run: node addEbook.js
 
-      # 5. Déployer le site statique sur GitHub Pages
+      # 5️⃣ Déployer le site sur GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .   # ton site est à la racine du repo
+          publish_dir: ./   # Assure-toi que tes fichiers HTML/CSS/JS sont à la racine
