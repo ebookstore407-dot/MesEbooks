@@ -1,0 +1,29 @@
+name: Déploiement site statique
+
+on:
+  push:
+    branches:
+      - main   # Déclenche le workflow à chaque push sur main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Vérifier le code
+        uses: actions/checkout@v3
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Choisis la version que tu veux
+
+      - name: Installer les dépendances (si tu as package.json)
+        run: npm install
+
+
+      - name: Déployer sur GitHub Pages
+        uses: peaceiris/actions-gh-pages@v6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./  # dossier à publier, ici la racine
