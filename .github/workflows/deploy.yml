@@ -1,3 +1,14 @@
+      - name: Envoyer un email de notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ebookstore407@gmail.com
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "Nouvel eBook publié ! 📚"
+          body: "Un nouvel eBook a été ajouté à votre bibliothèque. Consultez le site : https://ebookstore407-dot.github.io/MesEbooks/"
+          to: tondestinataire@gmail.com
+          from: ebookstore407@gmail.com
       - name: Notify Slack
         uses: rtCamp/action-slack-notify@v2
         env:
