@@ -5,6 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>À propos</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ====== RESET ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      line-height: 1.6;
+      background: #f7f7f7;
+      color: #12159c;
+    }
+
+    /* ====== HEADER ====== */
+    header {
+      background: #12159c;
+      color: #fff;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+    nav a {
+      margin: 0 0.8rem;
+      text-decoration: none;
+      color: #ddd;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* ====== HERO ====== */
+    .hero {
+      background: linear-gradient(to right, #0072ff, #00c6ff);
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+      animation: fadeIn 1.5s ease-in;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ====== ABOUT SECTION ====== */
+    .about {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 5px 20px rgba(27, 24, 180, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+    }
+    .card h3 {
+      margin-bottom: 1rem;
+      color: #0072ff;
+    }
+    .card p {
+      color: #555;
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+      background: #222;
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -17,11 +114,26 @@
     </nav>
   </header>
 
-  <main>
-    <section class="about">
-      <h2>Qui suis-je ?</h2>
-      <p>Ce site est dédié à la diffusion gratuite de mes eBooks. Mon objectif est de partager mes connaissances et mes histoires avec le plus grand nombre.</p>
-    </section>
+  <!-- Section Hero -->
+  <section class="hero">
+    <h2>Bienvenue dans mon univers</h2>
+    <p>Découvrez qui je suis, ce qui m’anime et pourquoi j’ai décidé de partager mes eBooks gratuitement.</p>
+  </section>
+
+  <!-- Section About -->
+  <main class="about">
+    <div class="card">
+      <h3>📖 Ma Passion</h3>
+      <p>J’adore écrire et transmettre des idées. Les eBooks sont pour moi un moyen de partager mes histoires et mes réflexions.</p>
+    </div>
+    <div class="card">
+      <h3>🌍 Ma Vision</h3>
+      <p>Créer une communauté de lecteurs curieux et avides de savoir, en rendant la lecture accessible à tous.</p>
+    </div>
+    <div class="card">
+      <h3>🤝 Mon Engagement</h3>
+      <p>Offrir gratuitement du contenu de qualité pour inspirer, éduquer et divertir le plus grand nombre.</p>
+    </div>
   </main>
 
   <footer>
