@@ -3,33 +3,42 @@ name: Deploy static site
 on:
   push:
     branches:
-      - main   # déploiement auto quand tu pousses sur main
+      - main   # Déploiement automatique sur chaque push vers main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Récupérer ton dépôt
+      # 1. Récupérer le dépôt
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. Installer Node.js (si tu utilises ton script addEbook.js ou autre)
+      # 2. Installer Node.js (nécessaire pour lancer ton script)
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '18'   # tu peux mettre 20 si tu veux la dernière LTS
 
-      # 3. (Optionnel) Lancer ton script d’update JSON si tu veux automatiser ebooks.json
-      - name: Run ebook update script
+      # 3. Installer les dépendances (si tu as un package.json)
+      - name: Install dependencies
+        run: |
+          if [ -f package.json ]; then
+            npm install
+          fi
+
+      # 4. Exécuter ton script de mise à jour des ebooks
+      - name: Update ebooks.json
         run: |
           if [ -f addEbook.js ]; then
             node addEbook.js
+          else
+            echo "Pas de script addEbook.js trouvé, étape ignorée."
           fi
 
-      # 4. Déployer sur GitHub Pages
+      # 5. Déployer le site statique sur GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .   # ton site statique est à la racine
+          publish_dir: .   # ton site est à la racine du repo
