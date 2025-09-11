@@ -1,8 +1,9 @@
-name: CI - MesEbooks
+name: CI - Validate and Deploy
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   build:
@@ -12,17 +13,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # Vérification HTML
       - name: Validate HTML
-        uses: rahulsinghai/html-validator-action@v1
-        with:
-          files: '**/*.html'
+        uses: Cyb3r-Jak3/html5validator-action@v0.4.3
 
-      - name: Lint CSS
-        uses: k4m4/css-validator-action@v1
-        with:
-          files: '**/*.css'
+      # Vérification CSS avec Stylelint
+      - name: Install Stylelint
+        run: npm install stylelint stylelint-config-standard
 
-      - name: Lint JS
-        run: |
-          npm install -g eslint
-          eslint js/**/*.js
+      - name: Run Stylelint
+        run: npx stylelint "**/*.css"
+
+      # Vérification JS avec ESLint
+      - name: Install ESLint
+        run: npm install eslint
+
+      - name: Run ESLint
+        run: npx eslint "**/*.js"
