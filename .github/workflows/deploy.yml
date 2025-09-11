@@ -1,3 +1,9 @@
+      - name: Notify Slack
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_CHANNEL: '#general'
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_MESSAGE: 'Un nouvel eBook a été publié ! 🎉'
       - name: Installer pdf-thumbnail
         run: npm install pdf-thumbnail
 
