@@ -1,16 +1,20 @@
-fetch('ebooks.json')
-  .then(res => res.json())
-  .then(data => {
-    const container = document.querySelector('.cards');
-    data.forEach(ebook => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = `
-        <img src="${ebook.cover}" alt="Couverture ${ebook.title}">
-        <h3>${ebook.title}</h3>
-        <p>${ebook.description}</p>
-        <a href="${ebook.link}" class="btn">Télécharger</a>
-      `;
-      container.appendChild(card);
-    });
-  });
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("ebooks.json")
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById("ebooks-list");
+            data.forEach(ebook => {
+                const card = document.createElement("div");
+                card.className = "ebook-card";
+
+                card.innerHTML = `
+                    <img src="${ebook.cover}" alt="${ebook.title}" class="cover">
+                    <h3>${ebook.title}</h3>
+                    <a href="${ebook.file}" target="_blank" download>Télécharger</a>
+                `;
+
+                container.appendChild(card);
+            });
+        })
+        .catch(error => console.error("Erreur chargement ebooks :", error));
+});
