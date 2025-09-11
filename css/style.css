@@ -434,7 +434,7 @@ header nav a:hover {
 /* ===================== Carte eBook ===================== */
 
 .card {
-  background-color: #fff;
+  background: linear-gradient(135deg, #283e51 0%, #485563 100%);
   border-radius: 20px;
   width: 260px;
   padding: 20px;
@@ -442,7 +442,8 @@ header nav a:hover {
   text-align: center;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 15px 30px rgba(40,62,81,0.15);
+  border: 2px solid #3f51b5;
 }
 
 /* Style spécifique pour la carte eBook 1 */
