@@ -1,3 +1,8 @@
+      - name: Installer pdf-thumbnail
+        run: npm install pdf-thumbnail
+
+      - name: Générer les miniatures PDF
+        run: node generate-thumbnails.js
 name: Déploiement site statique
 
 on:
@@ -13,8 +18,27 @@ jobs:
       - name: Vérifier le code
         uses: actions/checkout@v3
 
-  - name: Déployer sur GitHub Pages
-  uses: peaceiris/actions-gh-pages@v5
+      - name: Installer pdf-thumbnail
+        run: npm install pdf-thumbnail
+
+      - name: Générer les miniatures PDF
+        run: |
+          const fs = require('fs');
+          const path = require('path');
+          const pdfThumbnail = require('pdf-thumbnail');
+
+          const pdfDir = './ebooks/';
+          const thumbDir = './images/thumbnails/';
+
+          fs.readdirSync(pdfDir).forEach(file => {
+            if (file.endsWith('.pdf')) {
+              const pdfPath = path.join(pdfDir, file);
+              const thumbPath = path.join(thumbDir, file.replace('.pdf', '.png'));
+              pdfThumbnail(pdfPath).then(buffer => fs.writeFileSync(thumbPath, buffer));
+            }
+          });
+      - name: Déployer sur GitHub Pages
+        uses: peaceiris/actions-gh-pages@v5
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./  # dossier à publier, ici la racine
