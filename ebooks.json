@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Le Racisme",
+    "description": "Apprends tout sur le racisme moderne.",
+    "cover": "images/le-racisme.jpg",
+    "link": "ebooks/le-racisme.pdf"
+  },
+  {
+    "title": "Autre Ebook",
+    "description": "Description du deuxième ebook.",
+    "cover": "images/autre-ebook.jpg",
+    "link": "ebooks/autre-ebook.pdf"
+  }
+]

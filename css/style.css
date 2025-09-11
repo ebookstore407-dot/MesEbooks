@@ -1,3 +1,22 @@
+/* Style spécifique pour la carte eBook 2 */
+.card-ebook2 {
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  color: #333;
+  box-shadow: 0 8px 24px rgba(252,182,159,0.15);
+}
+
+.card-ebook2 h3 {
+  color: #d35400;
+}
+
+.card-ebook2 .btn {
+  background: linear-gradient(135deg, #fcb69f, #ffecd2);
+  color: #d35400;
+}
+.card-ebook2 .btn:hover {
+  background: linear-gradient(135deg, #d35400, #fcb69f);
+  color: #fff;
+}
 /* Footer collé en bas et sans espace inutile */
 footer {
   margin-bottom: 0 !important;
