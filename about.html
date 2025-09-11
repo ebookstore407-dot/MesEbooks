@@ -6,166 +6,96 @@
   <title>À propos</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* RESET */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
       font-family: "Segoe UI", Tahoma, sans-serif;
-      line-height: 1.6;
+      margin: 0;
+      padding: 0;
       background: #f7f7f7;
       color: #333;
     }
 
-    /* HEADER */
+    /* HEADER UNIFIÉ */
     header {
-      background: #222;
+      background: linear-gradient(135deg, #004e92, #000428); /* bleu moderne */
       color: #fff;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-    }
-    header h1 {
-      font-size: 1.4rem;
-      letter-spacing: 1px;
-    }
-
-    /* NAVIGATION */
-    nav {
-      display: flex;
-      gap: 1rem;
-    }
-    nav a {
-      text-decoration: none;
-      color: #ddd;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #fff;
-    }
-
-    /* BURGER MENU */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .menu-toggle span {
-      height: 3px;
-      width: 25px;
-      background: white;
-      margin: 4px 0;
-      transition: 0.3s;
-    }
-
-    /* HERO */
-    .hero {
-      background: linear-gradient(to right, #0072ff, #00c6ff);
-      color: white;
+      padding: 1rem;
       text-align: center;
-      padding: 3rem 1.5rem;
     }
-    .hero h2 {
-      font-size: 2rem;
+
+    nav a {
+      margin: 0 10px;
+      color: #ddd;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover { color: #fff; }
+
+    /* SECTION A PROPOS */
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .about-card {
+      flex: 1 1 calc(50% - 20px); /* 2 cartes par ligne */
+      min-height: 250px;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .about-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .about-card h3 {
+      font-size: 1.8rem;
       margin-bottom: 1rem;
     }
-    .hero p {
+
+    .about-card p {
+      max-width: 500px;
       font-size: 1rem;
-      max-width: 600px;
-      margin: 0 auto;
+      line-height: 1.6;
     }
 
-    /* ABOUT CARDS */
-    .about {
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s ease;
-      word-wrap: break-word; /* évite le débordement */
-    }
-    .card:hover {
-      transform: translateY(-6px);
-    }
-    .card h3 {
-      margin-bottom: 0.8rem;
-      color: #0072ff;
-      font-size: 1.3rem;
-    }
-    .card p {
-      color: #555;
-      font-size: 0.95rem;
+    /* Capsules personnalisées */
+    .passion { background: linear-gradient(135deg, indigo, #4b0082); }
+    .vision { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); } /* bleu-noir */
+    .engagement { background: linear-gradient(135deg, #0575e6, #00f260); } /* bleu-vert frais */
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about-card {
+        flex: 1 1 100%; /* pleine largeur sur mobile */
+      }
+      .about-card h3 { font-size: 1.5rem; }
+      .about-card p { font-size: 0.95rem; }
     }
 
-    /* FOOTER */
     footer {
+      background: #222;
+      color: #aaa;
       text-align: center;
       padding: 1rem;
       margin-top: 2rem;
-      background: #222;
-      color: #aaa;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 992px) {
-      .hero h2 { font-size: 1.8rem; }
-      .hero p { font-size: 0.95rem; }
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: #222;
-        flex-direction: column;
-        width: 200px;
-        display: none;
-        padding: 1rem;
-      }
-      nav.active {
-        display: flex;
-      }
-      .menu-toggle {
-        display: flex;
-      }
-      .about {
-        grid-template-columns: 1fr; /* une seule colonne sur mobile */
-        padding: 0 0.8rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header h1 { font-size: 1.1rem; }
-      .hero h2 { font-size: 1.5rem; }
-      .card { padding: 1rem; }
-      .card h3 { font-size: 1.1rem; }
-      .card p { font-size: 0.9rem; }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>À propos</h1>
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <nav id="nav">
+    <nav>
       <a href="index.html">Accueil</a>
       <a href="ebooks.html">Catalogue</a>
       <a href="about.html">À propos</a>
@@ -173,23 +103,18 @@
     </nav>
   </header>
 
-  <!-- Section Hero -->
-  <section class="hero">
-    <h2>Bienvenue dans mon univers</h2>
-    <p>Découvrez qui je suis, ce qui m’anime et pourquoi j’ai décidé de partager mes eBooks gratuitement.</p>
-  </section>
-
-  <!-- Section About -->
-  <main class="about">
-    <div class="card">
+  <main class="about-section">
+    <div class="about-card passion">
       <h3>📖 Ma Passion</h3>
       <p>J’adore écrire et transmettre des idées. Les eBooks sont pour moi un moyen de partager mes histoires et mes réflexions.</p>
     </div>
-    <div class="card">
+
+    <div class="about-card vision">
       <h3>🌍 Ma Vision</h3>
       <p>Créer une communauté de lecteurs curieux et avides de savoir, en rendant la lecture accessible à tous.</p>
     </div>
-    <div class="card">
+
+    <div class="about-card engagement">
       <h3>🤝 Mon Engagement</h3>
       <p>Offrir gratuitement du contenu de qualité pour inspirer, éduquer et divertir le plus grand nombre.</p>
     </div>
@@ -198,15 +123,5 @@
   <footer>
     <p>&copy; 2025 Mes eBooks en ligne. Tous droits réservés.</p>
   </footer>
-
-  <script>
-    // Script pour le menu burger
-    const menuToggle = document.getElementById('menu-toggle');
-    const nav = document.getElementById('nav');
-
-    menuToggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
-  </script>
 </body>
 </html>
