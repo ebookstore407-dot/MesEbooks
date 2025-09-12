@@ -54,6 +54,12 @@ jobs:
               pdfThumbnail(pdfPath).then(buffer => fs.writeFileSync(thumbPath, buffer));
             }
           });
+
+      - name: Save state
+        run: echo "myState=done" >> $GITHUB_STATE
+
+      - name: Set output
+        run: echo "myOutput=done" >> $GITHUB_OUTPUT
       - name: Déployer sur GitHub Pages
         uses: peaceiris/actions-gh-pages@v5
         with:

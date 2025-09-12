@@ -38,6 +38,12 @@ jobs:
       - name: Run ESLint
         run: npx eslint "**/*.js"
 
+      - name: Save state
+        run: echo "myState=done" >> $GITHUB_STATE
+
+      - name: Set output
+        run: echo "myOutput=done" >> $GITHUB_OUTPUT
+
       - name: Send email
         uses: ./.github/actions/action-send-mail-master
         with:
