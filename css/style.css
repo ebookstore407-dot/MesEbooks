@@ -10,7 +10,7 @@
 }
 
 .card-ebook2 .btn {
-  background: linear-gradient(135deg, #fcb69f, #ffecd2);
+    box-shadow: 0 8px 24px rgb(252 182 159 / 15%);
   color: #d35400;
 }
 .card-ebook2 .btn:hover {
@@ -44,7 +44,7 @@ main {
 }
 
 .slider {
-  display: flex;
+    box-shadow: 0 4px 15px rgb(0 0 0 / 20%);
   transition: transform 0.5s ease-in-out;
 }
 
@@ -104,7 +104,7 @@ main {
 }
 /* Slider Bannière */
 .banner-slider {
-  width: 100%;
+    box-shadow: 0 4px 15px rgb(0 0 0 / 20%);
   overflow: hidden;
   position: relative;
   margin: 2rem 0;
@@ -138,7 +138,7 @@ main {
   63%  { transform: translateX(-100%); }
   66%  { transform: translateX(-200%); }
   96%  { transform: translateX(-200%); }
-  100% { transform: translateX(0%); }
+    box-shadow: 0 4px 15px rgb(0 0 0 / 20%);
 }
 /* Bannière pub */
 .banner {
@@ -194,7 +194,7 @@ main {
 
 .banner-image img {
   max-width: 100%;
-  border-radius: 12px;
+    box-shadow: 0 8px 25px rgb(0 0 0 / 15%);
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
@@ -256,7 +256,7 @@ main {
 .banniere-image {
   flex: 1;
   min-width: 280px;
-  text-align: center;
+    box-shadow: 0 8px 25px rgb(0 0 0 / 15%);
 }
 
 .banniere-image img {
