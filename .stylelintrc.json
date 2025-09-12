@@ -1,3 +1,11 @@
 {
-  "extends": "stylelint-config-standard"
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "alpha-value-notation": "percentage",
+    "color-function-notation": "modern",
+    "color-function-alias-notation": "modern",
+    "no-duplicate-selectors": null,
+    "declaration-block-no-duplicate-properties": null,
+    "no-descending-specificity": null
+  }
 }

@@ -2,7 +2,7 @@
 .card-ebook2 {
   background: linear-gradient(135deg, #ffecd2, #fcb69f);
   color: #333;
-  box-shadow: 0 8px 24px rgba(252,182,159,0.15);
+  box-shadow: 0 8px 24px rgb(252 182 159 / 15%);
 }
 
 .card-ebook2 h3 {
@@ -40,17 +40,22 @@ main {
   margin: 2rem 0;
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgb(0 0 0 / 20%);
 }
 
 .slider {
-    box-shadow: 0 4px 15px rgb(0 0 0 / 20%);
+  display: flex;
+  width: 300%; /* 3 images -> ajuste selon ton nombre */
+  animation: slide 12s infinite;
+  box-shadow: 0 4px 15px rgb(0 0 0 / 20%);
   transition: transform 0.5s ease-in-out;
 }
 
 .slide {
   min-width: 100%;
+  flex: 1 0 100%;
   display: none;
+  position: relative;
 }
 
 .slide.active {
@@ -70,7 +75,7 @@ main {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
+  background: rgb(0 0 0 / 50%);
   color: white;
   border: none;
   padding: 10px;
@@ -109,7 +114,7 @@ main {
   position: relative;
   margin: 2rem 0;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgb(0 0 0 / 20%);
 }
 
 .slider {
@@ -142,13 +147,10 @@ main {
 }
 /* Bannière pub */
 .banner {
-  background: linear-gradient(135deg, #ff6f61, #ff9472);
-  color: white;
-  padding: 2rem 1rem;
-  margin: 2rem 0;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  background: red;
 }
+
+/* Commentaire */
 
 .banner-content {
   display: flex;
@@ -194,8 +196,7 @@ main {
 
 .banner-image img {
   max-width: 100%;
-    box-shadow: 0 8px 25px rgb(0 0 0 / 15%);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 25px rgb(0 0 0 / 15%);
 }
 
 /* Responsive pour petits écrans */
@@ -213,7 +214,7 @@ main {
   margin: 2rem auto;
   border-radius: 12px;
   max-width: 1200px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 25px rgb(0 0 0 / 15%);
 }
 
 .banniere-content {
@@ -262,7 +263,7 @@ main {
 .banniere-image img {
   max-width: 100%;
   border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 20px rgb(0 0 0 / 20%);
 }
 
 /* --- Responsive --- */
@@ -286,7 +287,7 @@ main {
   margin: 2rem auto;
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 25px rgb(0 0 0 / 15%);
 }
 
 .slides {
@@ -310,7 +311,7 @@ main {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  background: rgba(0,0,0,0.6);
+  background: rgb(0 0 0 / 60%);
   color: #fff;
   padding: 10px 20px;
   border-radius: 6px;
@@ -350,7 +351,7 @@ main {
 .annonce-card {
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
   padding: 1.5rem;
   text-align: center;
   transition: transform 0.3s;
@@ -390,7 +391,7 @@ header {
   color: #fff;
   padding: 1.5rem 1rem;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgb(0 0 0 / 15%);
 }
 
 header h1 {
@@ -442,7 +443,7 @@ header nav a:hover {
   text-align: center;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
-  box-shadow: 0 15px 30px rgba(40,62,81,0.15);
+  box-shadow: 0 15px 30px rgb(40 62 81 / 15%);
   border: 2px solid #3f51b5;
 }
 
@@ -453,7 +454,7 @@ header nav a:hover {
 
 .card:hover {
   transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  box-shadow: 0 25px 50px rgb(0 0 0 / 15%);
 }
 
 .card img {
@@ -482,7 +483,7 @@ header nav a:hover {
 .card .btn {
   display: inline-block;
   padding: 10px 20px;
-  background: rgba(255,255,255,0.9);
+  background: rgb(255 255 255 / 90%);
   color: #0d47a1;
   font-weight: 600;
   border-radius: 50px;
@@ -494,9 +495,18 @@ header nav a:hover {
   background: #fff;
   color: #1976d2;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgb(0 0 0 / 15%);
 }
 
+/* Spécifique à la carte eBook 2 */
+.card-ebook2 .btn {
+  box-shadow: 0 8px 24px rgb(252 182 159 / 15%);
+  color: #d35400;
+}
+.card-ebook2 .btn:hover {
+  background: linear-gradient(135deg, #d35400, #fcb69f);
+  color: #fff;
+}
 /* ===================== Footer ===================== */
 footer {
   text-align: center;
@@ -531,7 +541,7 @@ footer {
   background: #fff;
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 15px 30px rgb(0 0 0 / 5%);
   width: 300px;
   display: flex;
   flex-direction: column;
@@ -552,7 +562,7 @@ footer {
 .contact-form textarea:focus {
   border-color: #0d47a1;
   outline: none;
-  box-shadow: 0 0 10px rgba(13,71,161,0.2);
+  box-shadow: 0 0 10px rgb(13 71 161 / 20%);
 }
 
 .contact-form textarea {
@@ -581,7 +591,7 @@ footer {
   background: #fff;
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 15px 30px rgb(0 0 0 / 5%);
   width: 250px;
   text-align: center;
 }
