@@ -1,0 +1,233 @@
+/* Variables pour les couleurs et effets */
+:root {
+    --primary-light: #f5f7fa;
+    --secondary-light: #e8ecf1;
+    --accent-blue: rgba(0, 78, 146, 0.8);
+    --pattern-opacity-light: 0.05;
+    --pattern-opacity-dark: 0.03;
+    --gradient-angle: 135deg;
+    --animation-speed: 20s;
+}
+
+/* Propriétés pour l'image de fond */
+body {
+    position: relative;
+    background: url('../images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: rgba(255, 255, 255, 0.85);
+    pointer-events: none;
+}
+
+/* Styles pour les fonds */
+body {
+    /* Image de fond avec superposition */
+    background-color: var(--primary-light);
+    background-image:
+        linear-gradient(
+            var(--gradient-angle),
+            rgba(245, 247, 250, 0.85) 0%,
+            rgba(232, 236, 241, 0.83) 100%
+        ),
+        repeating-linear-gradient(
+            45deg,
+            rgba(0, 78, 146, 0.03) 0,
+            rgba(0, 78, 146, 0.03) 2px,
+            transparent 2px,
+            transparent 8px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            rgba(0, 78, 146, 0.03) 0,
+            rgba(0, 78, 146, 0.03) 2px,
+            transparent 2px,
+            transparent 8px
+        );
+    background-size:
+        cover,
+        100px 100px,
+        100px 100px;
+    background-position:
+        center,
+        center,
+        center;
+    background-repeat:
+        no-repeat,
+        repeat,
+        repeat;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #333; /* Couleur du texte ajustée */
+}
+
+/* Exemple avec plusieurs fonds pour différentes sections */
+.hero {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../images/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.about-section {
+    background:
+        url('../images/pattern.png') repeat,
+        linear-gradient(var(--gradient-angle), var(--primary-light), var(--secondary-light));
+    background-blend-mode: overlay;
+}
+
+/* Exemple de fond animé avec changement d'image */
+.animated-bg {
+    background-image: url('../images/slide1.jpg');
+    animation: slideChange 20s infinite;
+}
+
+@keyframes slideChange {
+    0%, 33% {
+        background-image: url('../images/slide1.jpg');
+    }
+    33.01%, 66% {
+        background-image: url('../images/slide2.jpg');
+    }
+    66.01%, 100% {
+        background-image: url('../images/slide3.jpg');
+    }
+}
+
+/* Exemple de motif en mosaïque */
+.pattern-bg {
+    background-image: url('../images/small-pattern.png');
+    background-repeat: repeat;
+    background-size: 100px 100px;
+}
+
+/* Motif de fond principal */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 25px 25px, var(--accent-blue) var(--pattern-opacity-light), transparent 0%),
+        radial-gradient(circle at 75px 75px, var(--accent-blue) var(--pattern-opacity-light), transparent 0%);
+    background-size: 100px 100px;
+    pointer-events: none;
+    z-index: -1;
+    animation: patternFloat 60s linear infinite;
+}
+
+/* Effet de lumière ambiant */
+body::after {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.03) 100%);
+    transform: rotate(30deg);
+    animation: lightShift 30s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Animations */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes patternFloat {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(1deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+@keyframes lightShift {
+    0% {
+        transform: rotate(30deg) scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: rotate(32deg) scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: rotate(30deg) scale(1);
+        opacity: 0.5;
+    }
+}
+
+/* Style du contenu principal */
+main {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+}
+
+/* Mode sombre */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-light: #1a1f25;
+        --secondary-light: #121418;
+        --accent-blue: rgba(0, 78, 146, 0.3);
+        --pattern-opacity-light: 0.03;
+    }
+
+    body {
+        color: #e8ecf1;
+    }
+
+    main {
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    /* Effet de brillance subtil en mode sombre */
+    body::after {
+        background: radial-gradient(circle at center, transparent 0%, rgba(0, 78, 146, 0.05) 100%);
+        opacity: 0.3;
+    }
+}
+
+/* Optimisations pour les appareils à faible puissance */
+@media (prefers-reduced-motion: reduce) {
+    body,
+    body::before,
+    body::after {
+        animation: none;
+        transition: none;
+    }
+}

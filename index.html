@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mes eBooks en ligne</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/slider.css">
+  <link rel="stylesheet" href="css/background.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -24,15 +26,44 @@
   </header>
 
   <main>
-    <!-- Hero section -->
+    <!-- Hero section avec slider -->
+    <section class="slider-container">
+      <!-- Slide 1 -->
+      <div class="slide slide-racisme active">
+        <div class="slide-content">
+          <h2>Le Racisme En Ligne: Comprendre</h2>
+          <p>Apprends tout sur le racisme moderne et surtout en ligne.</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide slide-detox">
+        <div class="slide-content">
+          <h2>Detox Numérique</h2>
+          <p>Découvrez comment gérer vos habitudes d'écran pour une vie équilibrée.</p>
+        </div>
+      </div>
+
+      <!-- Navigation du slider -->
+      <button class="prev" aria-label="Précédent"></button>
+      <button class="next" aria-label="Suivant"></button>
+
+      <div class="slider-nav">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+      </div>
+    </section>
+
+    <!-- Section de bienvenue -->
     <section class="hero">
       <h2>Bienvenue dans ma bibliothèque numérique</h2>
       <p>Découvrez mes eBooks gratuits et téléchargez-les facilement.</p>
       <a href="ebooks.html" class="btn">Voir le catalogue</a>
     </section>
 </main>
-<footer>
+  <footer>
     <p>&copy; 2025 Mes eBooks en ligne. Tous droits réservés.</p>
   </footer>
+  <script src="js/slider.js"></script>
 </body>
 </html>

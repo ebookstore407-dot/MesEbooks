@@ -7,6 +7,130 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/background.css">
+  <style>
+    /* Styles spécifiques pour la page des ebooks */
+    .catalogue {
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem 0;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(0, 78, 146, 0.1), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-bottom: 3px solid rgba(0, 78, 146, 0.2);
+      transition: transform 0.5s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
+    .card h3 {
+      padding: 1.5rem 1.5rem 0.5rem;
+      font-size: 1.4rem;
+      color: #004e92;
+      margin: 0;
+    }
+
+    .card p {
+      padding: 0 1.5rem 1.5rem;
+      margin: 0;
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .card .btn {
+      margin: 0 auto 1.5rem;
+      padding: 0.8rem 2rem;
+      background: linear-gradient(135deg, #004e92, #000428);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+      width: fit-content;
+      text-align: center;
+    }
+
+    .card .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 78, 146, 0.3);
+    }
+
+    /* Mode sombre */
+    @media (prefers-color-scheme: dark) {
+      .card {
+        background: rgba(26, 31, 37, 0.9);
+      }
+
+      .card h3 {
+        color: #7fbbff;
+      }
+
+      .card p {
+        color: #e8ecf1;
+      }
+
+      .card::before {
+        background: linear-gradient(45deg, rgba(0, 78, 146, 0.2), transparent);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .cards-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+      }
+
+      .card h3 {
+        font-size: 1.2rem;
+      }
+
+      .catalogue {
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -15,6 +139,11 @@
         <img src="images/logo.jpeg" alt="Logo MesEbooks" class="logo" loading="eager">
       </a>
     </div>
+    <button class="menu-toggle" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <h1>📚 Catalogue des eBooks</h1>
     <nav>
       <a href="index.html">Accueil</a>
