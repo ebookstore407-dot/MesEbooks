@@ -1,0 +1,142 @@
+/* Version alternative avec grille responsive */
+.catalogue {
+  position: relative;
+  z-index: 1;
+  padding: 2rem 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cards-container {
+  padding: 0 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cartes par ligne sur PC */
+  gap: 25px;
+  width: 100%;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* Style pour la première carte - Thème Bleu */
+.card.card-ebook1 {
+  background: #EBF5FF;
+  border: 2px solid #2D7FF9;
+  box-shadow: 0 5px 20px rgb(45 127 249 / 15%);
+}
+
+.card.card-ebook2 {
+  background: #FFF0F4;
+  border: 2px solid #FF4081;
+  box-shadow: 0 5px 20px rgb(255 64 129 / 15%);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  flex-grow: 0;
+}
+
+.card p {
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  flex-grow: 1; /* Permet au texte de prendre l'espace disponible */
+}
+
+.card .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-top: auto; /* Pousse le bouton vers le bas */
+}
+
+/* Responsive : Tablette (2 cartes par ligne) */
+@media (width <= 900px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .card img {
+    height: 180px;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Responsive : Mobile (1 carte par ligne) */
+@media (width <= 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    max-width: 400px; /* Évite que les cartes soient trop larges */
+    margin: 0 auto;
+  }
+
+  .catalogue {
+    padding: 1rem 0;
+  }
+
+  .cards-container {
+    padding: 0 15px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .card img {
+    height: 160px;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  .card .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

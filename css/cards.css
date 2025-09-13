@@ -9,26 +9,64 @@
 }
 
 .cards-container {
-  display: flex;
-  justify-content: center;
+  padding: 0 20px;
 }
 
 .cards {
-  display: flex;
-  flex-direction: column; /* Empile les cartes en vertical */
-  align-items: center;   /* Centre horizontalement */
-  gap: 20px;             /* Espacement entre les cartes */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cartes par ligne sur PC */
+  gap: 30px;
   width: 100%;
-  max-width: 500px;      /* Largeur max pour éviter trop d'étirement */
 }
 
 .card {
   width: 100%;
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   text-align: center;
-  padding: 20px;
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive : Tablettes (2 cartes par ligne) */
+@media (width <= 900px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .catalogue {
+    padding: 1.5rem 0;
+  }
+
+  .cards-container {
+    padding: 0 15px;
+  }
+}
+
+/* Responsive : Mobile (1 carte par ligne) */
+@media (width <= 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .catalogue {
+    padding: 1rem 0;
+  }
+
+  .cards-container {
+    padding: 0 12px;
+  }
+
+  .card {
+    padding: 20px;
+  }
 }
 
 /* Style pour la première carte - Thème Bleu */
@@ -82,31 +120,91 @@
 /* Styles pour les images et le contenu des cartes */
 .card img {
   width: 100%;
-  height: auto;
-  max-width: 200px;
+  height: 200px;
+  object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card:hover img {
+  transform: scale(1.02);
 }
 
 .card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  font-size: 1.25rem;
+  margin-bottom: 15px;
   line-height: 1.4;
+  font-weight: 600;
+  flex-grow: 0;
 }
 
 .card p {
   color: #666;
-  margin-bottom: 20px;
-  line-height: 1.5;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  flex-grow: 1; /* Permet au texte de prendre l'espace disponible */
 }
 
 .card .btn {
   display: inline-block;
-  padding: 10px 25px;
-  border-radius: 5px;
+  padding: 12px 28px;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
+  margin-top: auto; /* Pousse le bouton vers le bas */
+  font-size: 1rem;
+}
+
+/* Ajustements responsifs pour le contenu */
+@media (width <= 900px) {
+  .card img {
+    height: 180px;
+    margin-bottom: 15px;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .card .btn {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (width <= 600px) {
+  .card img {
+    height: 160px;
+    margin-bottom: 12px;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  .card .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
 }
 
 /* Responsive adjustments */
@@ -114,15 +212,15 @@
   .catalogue {
     padding: 1rem 0;
   }
-  
+
   .cards {
     padding: 0 15px;
   }
-  
+
   .card {
     padding: 15px;
   }
-  
+
   .card h3 {
     font-size: 1.1rem;
   }
