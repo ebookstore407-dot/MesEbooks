@@ -1,5 +1,5 @@
 /* Optimisations spécifiques pour iPhone X et appareils similaires */
-@media screen and (max-width: 428px) {
+@media screen and (width <= 428px) {
   /* Ajustements du header */
   header {
     padding: 0.5rem 0.3rem;
@@ -115,7 +115,7 @@
 }
 
 /* Ajustements pour les très petits écrans */
-@media screen and (max-width: 320px) {
+@media screen and (width <= 320px) {
   header h1 {
     font-size: 1.1rem;
   }
