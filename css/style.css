@@ -1,3 +1,74 @@
+/* Header et Logo */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: linear-gradient(135deg, #004e92, #000428);
+  color: #fff;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+/* Styles de base pour le logo */
+.logo {
+  max-height: 65px; /* Taille par défaut plus modérée */
+  width: auto;
+  margin-left: 1.2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transition plus naturelle */
+  border-radius: 4px; /* Coins moins arrondis */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Ombre plus subtile */
+  backface-visibility: hidden; /* Pour des animations plus fluides */
+}
+
+/* Effet hover sur le logo */
+.logo:hover {
+  transform: scale(1.05) rotate(1deg); /* Effet plus subtil */
+  filter: brightness(1.05) contrast(1.05); /* Effet lumineux plus doux */
+  box-shadow: 0 4px 12px rgba(0, 78, 146, 0.15); /* Ombre colorée subtile */
+}
+
+/* Animation au chargement */
+@keyframes logoFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px); /* Déplacement plus court */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo {
+  animation: logoFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Animation plus rapide et fluide */
+}
+
+/* Styles responsifs pour le logo */
+@media (max-width: 768px) {
+  .logo {
+    max-height: 50px; /* Plus compact sur mobile */
+    margin-left: 0.8rem; /* Marge réduite sur mobile */
+  }
+}
+
+@media (min-width: 1200px) {
+  .logo {
+    max-height: 75px; /* Taille plus modérée sur grands écrans */
+  }
+}
+
+/* Effet de focus pour l'accessibilité */
+.logo:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #004e92, 0 4px 12px rgba(0, 78, 146, 0.2);
+}
+}
+
 /* Style spécifique pour la carte eBook 2 */
 .card-ebook2 {
   background: linear-gradient(135deg, #ffecd2, #fcb69f);
