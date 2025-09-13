@@ -290,14 +290,29 @@ header h1 {
   background: linear-gradient(135deg, #004e92, #000428);
   color: white;
   text-decoration: none;
-  padding: 0.8rem 1.5rem;
+  padding: 0.7rem 1rem;
   border-radius: 6px;
   text-align: center;
   transition: all 0.3s ease;
   font-weight: 500;
   display: inline-block;
-  width: auto;
-  align-self: flex-start;
+  width: calc(100% - 2rem);
+  margin: 0.5rem 1rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card .btn:hover {
+  background: linear-gradient(135deg, #005fb8, #000f3d);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 78, 146, 0.2);
+}
+
+.card .btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card .btn:hover {
@@ -935,11 +950,36 @@ header nav a:hover {
 /* ===================== Footer ===================== */
 footer {
   text-align: center;
-  padding: 1.5rem 1rem;
-  background: #0d47a1;
-  color: #fff;
-  margin-top: 3rem;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, #004e92, #000428);
+  color: white;
+  margin-top: auto;
   font-size: 0.9rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f8f8f8;
+}
+
+main {
+  flex: 1;
+  padding-bottom: 2rem;
 }
 /* ===================== Contact Section ===================== */
 .contact-section {
