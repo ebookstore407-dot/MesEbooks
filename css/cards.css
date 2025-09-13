@@ -9,56 +9,33 @@
 }
 
 .cards-container {
-  width: 100%;
-  overflow: hidden;
-  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 .cards {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  gap: 1.2rem;
-  padding: 1rem;
-  max-width: 100%;
-  margin: 0 auto;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 1.5rem;
-  position: relative;
-  isolation: isolate;
-  z-index: 1;
-  mask-image: linear-gradient(to right,
-    transparent,
-    black 5%,
-    black 95%,
-    transparent
-  );
-  -webkit-mask-image: linear-gradient(to right,
-    transparent,
-    black 5%,
-    black 95%,
-    transparent
-  );
+  flex-direction: column; /* Empile les cartes en vertical */
+  align-items: center;   /* Centre horizontalement */
+  gap: 20px;             /* Espacement entre les cartes */
+  width: 100%;
+  max-width: 500px;      /* Largeur max pour éviter trop d'étirement */
 }
 
-/* Pour éviter le chevauchement avec le header */
-main {
-  padding-top: 1rem;
-  position: relative;
-  z-index: 1;
+.card {
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 20px;
 }
-
-/* Styles personnalisés pour les cartes d'ebooks */
 
 /* Style pour la première carte - Thème Bleu */
 .card.card-ebook1 {
   background: #EBF5FF;
   border: 2px solid #2D7FF9;
-  box-shadow: 0 5px 20px rgba(45, 127, 249, 0.15);
+  box-shadow: 0 5px 20px rgb(45 127 249 / 15%);
 }
 
 .card.card-ebook1 h3 {
@@ -66,23 +43,23 @@ main {
 }
 
 .card.card-ebook1 .btn {
-  background: #2D7FF9 !important;
-  color: white !important;
-  border: none !important;
-  box-shadow: 0 4px 15px rgba(45, 127, 249, 0.3) !important;
+  background: #2D7FF9;
+  color: white;
+  border: none;
+  box-shadow: 0 4px 15px rgb(45 127 249 / 30%);
 }
 
 .card.card-ebook1 .btn:hover {
-  background: #1a5fb4 !important;
+  background: #1a5fb4;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(45, 127, 249, 0.4) !important;
+  box-shadow: 0 6px 20px rgb(45 127 249 / 40%);
 }
 
 /* Style pour la deuxième carte - Thème Rose */
 .card.card-ebook2 {
   background: #FFF0F4;
   border: 2px solid #FF4081;
-  box-shadow: 0 5px 20px rgba(255, 64, 129, 0.15);
+  box-shadow: 0 5px 20px rgb(255 64 129 / 15%);
 }
 
 .card.card-ebook2 h3 {
@@ -90,14 +67,69 @@ main {
 }
 
 .card.card-ebook2 .btn {
-  background: #FF4081 !important;
-  color: white !important;
-  border: none !important;
-  box-shadow: 0 4px 15px rgba(255, 64, 129, 0.3) !important;
+  background: #FF4081;
+  color: white;
+  border: none;
+  box-shadow: 0 4px 15px rgb(255 64 129 / 30%);
 }
 
 .card.card-ebook2 .btn:hover {
-  background: #d81b60 !important;
+  background: #d81b60;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 64, 129, 0.4) !important;
+  box-shadow: 0 6px 20px rgb(255 64 129 / 40%);
+}
+
+/* Styles pour les images et le contenu des cartes */
+.card img {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.card p {
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.card .btn {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (width <= 768px) {
+  .catalogue {
+    padding: 1rem 0;
+  }
+  
+  .cards {
+    padding: 0 15px;
+  }
+  
+  .card {
+    padding: 15px;
+  }
+  
+  .card h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (width <= 480px) {
+  .card img {
+    max-width: 160px;
+  }
 }

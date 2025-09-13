@@ -1,3 +1,16 @@
+/* Optimisations pour tablettes et mobiles */
+@media screen and (width <= 768px) {
+  .cards {
+    max-width: 90%; /* S'adapte mieux sur petits écrans */
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+}
+
 /* Optimisations spécifiques pour iPhone X et appareils similaires */
 @media screen and (width <= 428px) {
   /* Ajustements du header */
