@@ -2,73 +2,80 @@
 @media screen and (width <= 428px) {
   /* Ajustements du header */
   header {
-    padding: 0.5rem 0.3rem;
+    padding: 0.3rem 0.2rem;
   }
 
   header h1 {
-    font-size: 1.2rem;
-    padding: 0 0.5rem;
+    font-size: 1.1rem;
+    padding: 0 0.3rem;
+    margin: 0.2rem 0;
   }
 
   header nav {
-    padding: 0.3rem;
-    gap: 0.2rem;
+    padding: 0.2rem;
+    gap: 0.15rem;
+    margin-top: -0.1rem;
   }
 
   header nav a {
-    padding: 0.4rem 0.6rem;
-    font-size: 0.85rem;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.8rem;
   }
 
   .logo {
-    max-height: 40px;
+    max-height: 35px;
+    margin: 0.1rem;
   }
 
   /* Ajustements du catalogue */
   .catalogue {
-    padding: 1rem 0;
+    padding: 0.5rem 0;
+    margin-top: -0.5rem;
   }
 
   .catalogue h2 {
-    font-size: 1.4rem;
-    padding: 0 1rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    padding: 0 0.8rem;
+    margin-bottom: 0.3rem;
   }
 
   .cards {
-    padding: 0.5rem;
-    gap: 0.8rem;
+    padding: 0.3rem;
+    gap: 0.6rem;
     margin: 0;
-    scroll-padding: 0.5rem;
+    scroll-padding: 0.3rem;
   }
 
   .card {
-    min-width: 240px;
-    max-width: 240px;
-    min-height: 360px;
+    min-width: 220px;
+    max-width: 220px;
+    min-height: 340px;
   }
 
   .card img {
-    height: 180px;
+    height: 160px;
   }
 
   .card-content {
-    padding: 0.8rem;
+    padding: 0.6rem;
   }
 
   .card h3 {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
   }
 
   .card p {
-    font-size: 0.85rem;
-    margin-bottom: 0.8rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.4;
   }
 
   .card .btn {
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+    margin-top: auto;
   }
 
   /* Ajustements de la page contact */
