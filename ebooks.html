@@ -6,8 +6,113 @@
   <title>Catalogue - Mes eBooks</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/mobile.css">
-  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/cards-grid.css">
+  <style>
+    /* Nettoyage des bordures globales */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #0d47a1;
+      color: white;
+    }
+
+    /* Style du header déplacé dans style.css */
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+    }
+
+    main {
+      padding: 30px 15px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .catalogue {
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #0d47a1;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .card p {
+      font-size: 0.95em;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background: #0d47a1;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #1565c0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      font-size: 0.85em;
+      background: #eee;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -29,25 +134,23 @@
     <section class="catalogue">
       <h2>Mes eBooks gratuits</h2>
       <div class="cards-container">
-        <div class="cards">
 
-  <!-- Carte eBook 1 -->
-  <div class="card card-ebook1">
+        <!-- Carte eBook 1 -->
+        <div class="card card-ebook1">
           <img src="images/cover.jpg" alt="Couverture Le Racisme">
           <h3>Le Racisme En Ligne: Comprendre</h3>
-          <p>Apprends tout sur le racisme moderne et Surtout en Ligne.</p>
+          <p>Apprends tout sur le racisme moderne et surtout en ligne.</p>
           <a href="https://drive.google.com/file/d/1cGuB8oPvXwlyeRDVN7uslNLtAqbwx8hW/view?usp=drivesdk" class="btn">Télécharger</a>
         </div>
 
         <!-- Carte eBook 2 -->
         <div class="card card-ebook2">
-          <img src="images/cover1.png" alt="Couverture Se Détacher Fcailement Des écrans">
+          <img src="images/cover1.png" alt="Couverture Se Détacher Facilement Des écrans">
           <h3>Detox Numérique: Réduire Le Temps d'écran et Retrouver L'équilibre</h3>
-          <p>Découvrez comment vos habitudes D'écrans seront gerées pour une vie équilibrée avec moins d'écran.</p>
+          <p>Découvrez comment vos habitudes d'écran seront gérées pour une vie équilibrée.</p>
           <a href="https://drive.google.com/file/d/1A1-HENIImRzjoQtwdlF3pJ-L0KqsK9K7/view?usp=drive_link" class="btn">Télécharger</a>
         </div>
 
-        </div>
       </div>
     </section>
   </main>

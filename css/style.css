@@ -84,28 +84,33 @@ header h1 {
 
 /* Styles de base pour le logo */
 .logo {
-  max-height: 65px; /* Taille par défaut plus modérée */
+  max-height: 60px;
   width: auto;
   margin-left: 1.2rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   backface-visibility: hidden;
+  padding: 2px;
+  background: white;
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 768px) {
   .logo {
-    max-height: 50px;
+    max-height: 45px;
     margin: 0.5rem 0;
     margin-left: 0;
+    border-width: 1.5px;
   }
 }
 
 /* Effet hover sur le logo */
 .logo:hover {
-  transform: scale(1.05) rotate(1deg); /* Effet plus subtil */
-  filter: brightness(1.05) contrast(1.05); /* Effet lumineux plus doux */
-  box-shadow: 0 4px 12px rgba(0, 78, 146, 0.15); /* Ombre colorée subtile */
+  transform: scale(1.1);
+  filter: brightness(1.1);
+  box-shadow: 0 4px 15px rgba(0, 78, 146, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 /* Animation au chargement */
