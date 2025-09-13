@@ -1,61 +1,128 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Contact - Mes eBooks</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/mobile.css">
-  <link rel="stylesheet" href="css/background.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Contactez-nous pour toute question sur nos eBooks ou pour partager votre avis de lecture">
+    <meta name="theme-color" content="#004e92">
+    <title>Contact - Mes eBooks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <div class="logo-container">
-      <a href="index.html" title="Retour à l'accueil">
-        <img src="images/logo.jpeg" alt="Logo MesEbooks" class="logo" loading="eager">
-      </a>
-    </div>
-    <h1>📬 Contactez-moi</h1>
-    <nav>
-      <a href="index.html">Accueil</a>
-      <a href="ebooks.html">Catalogue</a>
-      <a href="about.html">À propos</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="contact-section">
-      <h2>Entrer en contact</h2>
-
-      <div class="contact-container">
-        <!-- Formulaire -->
-        <form class="contact-form" action="https://formspree.io/f/myzdoowe" method="POST">
-          <input type="text" name="name" placeholder="Votre nom" required>
-          <input type="email" name="email" placeholder="Votre email" required>
-          <textarea name="message" placeholder="Votre avis après lecture" required></textarea>
-          <button type="submit" class="btn">Envoyer</button>
-        </form>
-
-        <!-- Coordonnées & réseaux sociaux -->
-        <div class="contact-info">
-          <h3>Mes contacts</h3>
-          <p>Email: <a href="mailto:ebookstore407@gmail.com">ebookstore407@gmail.com</a></p>
-          <h3>Réseaux sociaux</h3>
-          <div class="social-links">
-            <a href="https://www.facebook.com/profile.php?id=61580334064664&mibextid=wwXIfr&mibextid=wwXIfr" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://x.com/e_bookcreator6?s=21" target="_blank" rel="noopener" title="X (Twitter)"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/ebook.man?igsh=bXJ3OWhieXA5MjVj&utm_source=qr" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
-          </div>
+    <header>
+        <div class="logo-container">
+            <a href="index.html" title="Retour à l'accueil">
+                <img src="images/logo.jpeg" alt="Logo MesEbooks" class="logo" width="60" height="60" loading="eager">
+            </a>
         </div>
-      </div>
-    </section>
-  </main>
+        <h1><i class="far fa-envelope"></i> Contactez-moi</h1>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i><span>Accueil</span></a>
+            <a href="ebooks.html"><i class="fas fa-books"></i><span>Catalogue</span></a>
+            <a href="about.html"><i class="fas fa-info-circle"></i><span>À propos</span></a>
+            <a href="contact.html" class="active"><i class="fas fa-envelope"></i><span>Contact</span></a>
+        </nav>
+    </header>
 
-  <footer>
-    <p>&copy; 2025 Mes eBooks en ligne. Tous droits réservés.</p>
-  </footer>
+    <main>
+        <section class="contact-section" aria-labelledby="contact-title">
+            <h2 id="contact-title">Restons en contact</h2>
+
+            <div class="contact-container">
+                <!-- Formulaire de contact -->
+                <form class="contact-form" action="https://formspree.io/f/myzdoowe" method="POST">
+                    <div class="form-group">
+                        <label for="name">Votre nom</label>
+                        <input type="text" id="name" name="name" placeholder="Comment puis-je vous appeler ?" required
+                               autocomplete="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Votre email</label>
+                        <input type="email" id="email" name="email" placeholder="Pour vous recontacter" required
+                               autocomplete="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Votre message</label>
+                        <textarea id="message" name="message" placeholder="Partagez votre avis ou posez vos questions" required
+                                  rows="4"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">
+                        <i class="fas fa-paper-plane"></i> Envoyer
+                    </button>
+                </form>
+
+                <!-- Informations de contact -->
+                <div class="contact-info">
+                    <div class="info-section">
+                        <h3><i class="fas fa-at"></i> Email professionnel</h3>
+                        <p>
+                            <a href="mailto:ebookstore407@gmail.com" class="email-link">
+                                ebookstore407@gmail.com
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3><i class="fas fa-hashtag"></i> Réseaux sociaux</h3>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/profile.php?id=61580334064664"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Suivez-nous sur Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://x.com/e_bookcreator6?s=21"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Suivez-nous sur X (Twitter)">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/ebook.man"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Suivez-nous sur Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Mes eBooks en ligne. Tous droits réservés.</p>
+            <p>Suivez-nous pour découvrir de nouveaux contenus !</p>
+        </div>
+    </footer>
+
+    <script>
+        // Validation améliorée du formulaire
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+
+            // Vérification de la longueur minimale du message
+            if (messageInput.value.length < 10) {
+                e.preventDefault();
+                alert('Votre message doit contenir au moins 10 caractères.');
+                return false;
+            }
+
+            // Animation de soumission
+            const button = this.querySelector('button[type="submit"]');
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...';
+            button.disabled = true;
+        });
+    </script>
 </body>
 </html>
