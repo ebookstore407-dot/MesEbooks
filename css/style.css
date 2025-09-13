@@ -151,20 +151,13 @@ header h1 {
 
 /* Styles des cartes eBook */
 .cards {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 16px;
-  padding: 20px;
-  max-width: 100%;
-  margin: 0 -20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scroll-snap-type: x proximity;
-  padding-bottom: 24px;
-  -ms-overflow-style: none;
-  scrollbar-color: rgba(0, 78, 146, 0.5) transparent;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2.5rem;
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 /* Style de la scrollbar */
@@ -191,9 +184,8 @@ header h1 {
 
 @media (min-width: 768px) {
   .cards {
-    justify-content: center;
-    gap: 1.5rem;
-    padding: 1.2rem;
+    gap: 3rem;
+    padding: 2rem;
   }
 }
 
@@ -205,14 +197,14 @@ header h1 {
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  flex: 0 0 200px;
-  min-width: 180px;
-  max-width: 200px;
-  margin: 0;
+  flex: 0 0 220px;
+  min-width: 200px;
+  max-width: 220px;
+  margin: 1rem;
   scroll-snap-align: start;
   position: relative;
-  min-height: 300px;
-  padding-bottom: 0.8rem;
+  min-height: 320px;
+  padding-bottom: 1rem;
 }
 
 /* Style spécifique pour la première carte */
@@ -295,9 +287,9 @@ header h1 {
   text-align: center;
   transition: all 0.3s ease;
   font-weight: 500;
-  display: inline-block;
-  width: calc(100% - 2rem);
-  margin: 0.5rem 1rem;
+  display: block;
+  width: 85%;
+  margin: 0.5rem auto;
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;

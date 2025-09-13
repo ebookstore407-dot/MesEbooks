@@ -1,5 +1,12 @@
 /* Optimisations pour tablettes et mobiles */
-@media screen and (width <= 768px) {
+@media screen a  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    overflow: visible;
+  }h <= 768px) {
   .cards {
     max-width: 90%; /* S'adapte mieux sur petits écrans */
   }
@@ -63,8 +70,8 @@
   .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 0.8rem;
-    padding: 0.5rem;
+    gap: 2rem;
+    padding: 1rem;
     margin: 0;
     overflow: visible;
   }
