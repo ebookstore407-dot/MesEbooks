@@ -62,8 +62,8 @@
 
   .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.8rem;
     padding: 0.5rem;
     margin: 0;
     overflow: visible;
@@ -71,16 +71,16 @@
 
   .card {
     width: 100%;
-    max-width: none;
+    max-width: 180px;
     min-width: 0;
     min-height: 0;
-    margin: 0;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     padding: 0;
     background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     border: 1px solid rgba(0, 0, 0, 0.04);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
@@ -92,48 +92,48 @@
 
   .card img {
     width: 100%;
-    height: 200px;
+    height: 140px;
     object-fit: contain;
-    border-radius: 8px 8px 0 0;
-    background: #f5f5f5;
-    padding: 0.5rem;
+    border-radius: 10px 10px 0 0;
+    background: #f8f8f8;
+    padding: 0.3rem;
   }
 
   .card-content {
     flex: 1;
-    padding: 1rem;
+    padding: 0.6rem;
     display: flex;
     flex-direction: column;
     height: auto;
   }
 
   .card h3 {
-    font-size: 0.95rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.3;
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
     color: #333;
     font-weight: 600;
   }
 
   .card p {
-    font-size: 0.85rem;
-    margin-bottom: 0.8rem;
-    line-height: 1.4;
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
     color: #666;
     flex: 1;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
 
   .card .btn {
-    padding: 0.7rem;
-    font-size: 0.9rem;
+    padding: 0.5rem;
+    font-size: 0.8rem;
     width: 100%;
     text-align: center;
-    margin-top: 0.5rem;
-    border-radius: 8px;
+    margin-top: 0.3rem;
+    border-radius: 6px;
     transition: all 0.3s ease;
     background: linear-gradient(135deg, #004e92, #000428);
     color: white;
@@ -281,42 +281,47 @@
   }
 
   .catalogue h2 {
-    font-size: 1rem;
-    margin: 0.4rem 0;
+    font-size: 0.95rem;
+    margin: 0.3rem 0;
   }
 
   .cards {
-    gap: 0.8rem;
-    padding: 0.4rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    padding: 0.3rem;
   }
 
   .card {
-    border-radius: 10px;
+    max-width: 150px;
+    border-radius: 8px;
   }
 
   .card img {
-    height: 160px;
+    height: 120px;
+    border-radius: 8px 8px 0 0;
   }
 
   .card h3 {
-    font-size: 0.9rem;
-    margin-bottom: 0.4rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
   }
 
   .card p {
-    font-size: 0.8rem;
-    margin-bottom: 0.6rem;
+    font-size: 0.7rem;
+    margin-bottom: 0.4rem;
     -webkit-line-clamp: 2;
+    line-height: 1.2;
   }
 
   .card .btn {
-    padding: 0.6rem;
-    font-size: 0.8rem;
-    margin-top: 0.4rem;
+    padding: 0.4rem;
+    font-size: 0.75rem;
+    margin-top: 0.3rem;
+    border-radius: 5px;
   }
 
   .card-content {
-    padding: 0.8rem;
+    padding: 0.5rem;
   }
 }
 

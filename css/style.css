@@ -201,18 +201,18 @@ header h1 {
   background: white;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  flex: 0 0 260px;
-  min-width: 260px;
-  max-width: 260px;
+  flex: 0 0 200px;
+  min-width: 180px;
+  max-width: 200px;
   margin: 0;
   scroll-snap-align: start;
   position: relative;
-  min-height: 380px;
-  padding-bottom: 1rem;
+  min-height: 300px;
+  padding-bottom: 0.8rem;
 }
 
 /* Style spécifique pour la première carte */
