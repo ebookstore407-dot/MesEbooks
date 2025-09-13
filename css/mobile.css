@@ -1,0 +1,151 @@
+/* Optimisations spécifiques pour iPhone X et appareils similaires */
+@media screen and (max-width: 428px) {
+  /* Ajustements du header */
+  header {
+    padding: 0.5rem 0.3rem;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+  }
+
+  header nav {
+    padding: 0.3rem;
+    gap: 0.2rem;
+  }
+
+  header nav a {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .logo {
+    max-height: 40px;
+  }
+
+  /* Ajustements du catalogue */
+  .catalogue {
+    padding: 1rem 0;
+  }
+
+  .catalogue h2 {
+    font-size: 1.4rem;
+    padding: 0 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cards {
+    padding: 0.5rem;
+    gap: 0.8rem;
+    margin: 0;
+    scroll-padding: 0.5rem;
+  }
+
+  .card {
+    min-width: 240px;
+    max-width: 240px;
+    min-height: 360px;
+  }
+
+  .card img {
+    height: 180px;
+  }
+
+  .card-content {
+    padding: 0.8rem;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .card .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Ajustements de la page contact */
+  .contact-section {
+    padding: 1rem;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .contact-form {
+    padding: 1rem;
+    width: 100%;
+    max-width: none;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .contact-info {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .contact-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .social-links {
+    gap: 1.2rem;
+  }
+
+  .social-links a {
+    font-size: 1.4rem;
+  }
+}
+
+/* Ajustements pour les très petits écrans */
+@media screen and (max-width: 320px) {
+  header h1 {
+    font-size: 1.1rem;
+  }
+
+  header nav a {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .card {
+    min-width: 220px;
+    max-width: 220px;
+  }
+}
+
+/* Safe area pour iPhone X et modèles similaires */
+@supports (padding: max(0px)) {
+  header {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-top: max(0.5rem, env(safe-area-inset-top));
+  }
+
+  .contact-section,
+  .catalogue {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  footer {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
