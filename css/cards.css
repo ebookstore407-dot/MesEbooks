@@ -1,0 +1,49 @@
+/* Styles personnalisés pour les cartes d'ebooks */
+
+/* Style pour la première carte - Thème Bleu */
+.card.card-ebook1 {
+  background: #EBF5FF;
+  border: 2px solid #2D7FF9;
+  box-shadow: 0 5px 20px rgba(45, 127, 249, 0.15);
+}
+
+.card.card-ebook1 h3 {
+  color: #1a5fb4;
+}
+
+.card.card-ebook1 .btn {
+  background: #2D7FF9 !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(45, 127, 249, 0.3) !important;
+}
+
+.card.card-ebook1 .btn:hover {
+  background: #1a5fb4 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(45, 127, 249, 0.4) !important;
+}
+
+/* Style pour la deuxième carte - Thème Rose */
+.card.card-ebook2 {
+  background: #FFF0F4;
+  border: 2px solid #FF4081;
+  box-shadow: 0 5px 20px rgba(255, 64, 129, 0.15);
+}
+
+.card.card-ebook2 h3 {
+  color: #d81b60;
+}
+
+.card.card-ebook2 .btn {
+  background: #FF4081 !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(255, 64, 129, 0.3) !important;
+}
+
+.card.card-ebook2 .btn:hover {
+  background: #d81b60 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 64, 129, 0.4) !important;
+}
