@@ -2,26 +2,22 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Découvrez notre collection d'eBooks premium avec des contenus exclusifs">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <title>E-Premium - Mes eBooks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Premium - Collection Premium</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mobile.css">
     <link rel="stylesheet" href="css/background.css">
-    <link rel="stylesheet" href="css/premium.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="logo-container">
             <a href="index.html" title="Retour à l'accueil">
-                <img src="images/logo.jpeg" alt="Logo MesEbooks" class="logo" width="60" height="60" loading="eager">
+                <img src="images/logo.jpeg" alt="Logo MesEbooks" class="logo" width="60" height="60">
             </a>
         </div>
-        <h1><i class="fas fa-crown"></i> E-Premium</h1>
+        <h1><i class="fas fa-crown"></i> Collection Premium</h1>
         <nav>
             <a href="index.html"><i class="fas fa-home"></i><span>Accueil</span></a>
             <a href="ebooks.html"><i class="fas fa-book"></i><span>Catalogue</span></a>
@@ -33,129 +29,30 @@
 
     <main>
         <section class="premium-section">
-            <h2>Collection Premium</h2>
-            <p class="premium-intro">Découvrez nos eBooks premium avec du contenu exclusif et approfondi</p>
-
-            <div class="subscription-plans">
-                <!-- Plan Mensuel -->
-                <article class="subscription-card">
-                    <div class="premium-badge">
-                        <i class="fas fa-crown"></i> Mensuel
-                    </div>
-                    <div class="subscription-content">
-                        <h3>Abonnement Premium Mensuel</h3>
-                        <p class="subscription-price">4.99 €<span>/mois</span></p>
-                        <div class="subscription-features">
-                            <span><i class="fas fa-check"></i> Accès à tous les eBooks premium</span>
-                            <span><i class="fas fa-check"></i> Nouvelles sorties incluses</span>
-                            <span><i class="fas fa-check"></i> Support prioritaire</span>
-                            <span><i class="fas fa-check"></i> Annulation à tout moment</span>
-                        </div>
-                        <div class="paypal-button-container" id="paypal-button-monthly"></div>
+            <h2 class="premium-title">Nos eBooks Premium</h2>
+            <div class="premium-cards">
+                <!-- Cartes des eBooks Premium -->
+                <article class="premium-card">
+                    <span class="premium-badge">Premium</span>
+                    <img src="images/premium1.jpg" alt="eBook Premium 1">
+                    <div class="premium-card-content">
+                        <h3>Titre eBook Premium 1</h3>
+                        <p>Description détaillée de l'eBook premium avec ses avantages exclusifs.</p>
+                        <div class="price">9.99 €</div>
+                        <button class="btn-premium" onclick="initPayPalButton()">Acheter maintenant</button>
                     </div>
                 </article>
-
-                <!-- Plan Annuel -->
-                <article class="subscription-card featured">
-                    <div class="premium-badge">
-                        <i class="fas fa-crown"></i> Annuel
-                    </div>
-                    <div class="best-value">
-                        <i class="fas fa-star"></i> Meilleure offre
-                    </div>
-                    <div class="subscription-content">
-                        <h3>Abonnement Premium Annuel</h3>
-                        <p class="subscription-price">49.99 €<span>/an</span></p>
-                        <p class="saving-badge">Économisez 40%</p>
-                        <div class="subscription-features">
-                            <span><i class="fas fa-check"></i> Tous les avantages du plan mensuel</span>
-                            <span><i class="fas fa-check"></i> 2 mois gratuits inclus</span>
-                            <span><i class="fas fa-check"></i> Accès anticipé aux nouveautés</span>
-                            <span><i class="fas fa-check"></i> Contenu exclusif réservé</span>
-                        </div>
-                        <div class="paypal-button-container" id="paypal-button-yearly"></div>
-                    </div>
-                </article>
-            </div>
-
-            <!-- Section Aperçu du Contenu Premium -->
-            <div class="premium-preview">
-                <h3>Contenu Premium Inclus</h3>
-                <div class="preview-grid">
-                    <!-- Exemple de contenu premium -->
-                    <div class="preview-item">
-                        <img src="images/cover-premium-1.jpg" alt="eBook Premium" loading="lazy">
-                        <h4>Titre de l'eBook Premium</h4>
-                        <p>Description courte du contenu premium disponible avec l'abonnement.</p>
-                    </div>
-                    <!-- Ajoutez d'autres aperçus ici -->
-                </div>
+                <!-- Ajoutez d'autres cartes premium ici -->
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Mes eBooks en ligne. Tous droits réservés.</p>
-            <p>Paiements sécurisés via PayPal</p>
-        </div>
+        <p>&copy; 2023 MesEbooks. Tous droits réservés.</p>
     </footer>
 
-    <!-- PayPal SDK avec support des abonnements -->
-    <script src="https://www.paypal.com/sdk/js?client-id=VOTRE_CLIENT_ID&currency=EUR&vault=true"></script>
-    <script>
-        // Configuration des boutons PayPal pour les abonnements
-        function createSubscriptionButton(buttonContainer, planId, interval) {
-            paypal.Buttons({
-                style: {
-                    layout: 'vertical',
-                    color: 'blue',
-                    shape: 'rect',
-                    label: 'subscribe'
-                },
-                createSubscription: function(data, actions) {
-                    return actions.subscription.create({
-                        'plan_id': planId  // Remplacez par votre vrai plan_id PayPal
-                    });
-                },
-                onApprove: function(data, actions) {
-                    alert('Merci de votre abonnement ! Vous allez recevoir un email de confirmation.');
-                    // Ici, vous pouvez rediriger vers une page de confirmation
-                    // ou mettre à jour l'interface utilisateur
-
-                    // Exemple de requête pour enregistrer l'abonnement
-                    fetch('/api/subscribe', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            subscriptionId: data.subscriptionID,
-                            interval: interval
-                        })
-                    }).then(response => response.json())
-                    .then(data => {
-                        console.log('Abonnement enregistré:', data);
-                    })
-                    .catch(error => {
-                        console.error('Erreur:', error);
-                    });
-                },
-                onError: function(err) {
-                    console.error('Erreur:', err);
-                    alert('Une erreur est survenue lors de la création de l\'abonnement.');
-                }
-            }).render('#' + buttonContainer);
-        }
-
-        // Initialiser les boutons d'abonnement
-        window.onload = function() {
-            // Créer le bouton d'abonnement mensuel
-            createSubscriptionButton('paypal-button-monthly', 'MONTHLY_PLAN_ID', 'monthly');
-
-            // Créer le bouton d'abonnement annuel
-            createSubscriptionButton('paypal-button-yearly', 'YEARLY_PLAN_ID', 'yearly');
-        };
-    </script>
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=VOTRE_CLIENT_ID&currency=EUR"></script>
+    <script src="js/premium.js"></script>
 </body>
 </html>
