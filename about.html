@@ -2,27 +2,18 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>À propos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="En savoir plus sur MesEbooks et notre mission">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>À propos - Mes eBooks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/background.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
 
-    /* HEADER UNIFIÉ */
-    header {
-      background: linear-gradient(135deg, #004e92, #000428); /* bleu moderne */
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    nav a {
-      margin: 0 10px;
-      color: #ddd;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav a:hover { color: #fff; }
+    /* Styles spécifiques à la page À propos */
 
     /* SECTION A PROPOS */
     .about-section {
@@ -90,15 +81,16 @@
   <header>
     <div class="logo-container">
       <a href="index.html" title="Retour à l'accueil">
-        <img src="images/logo.jpeg" alt="Logo MesEbooks" class="logo" loading="eager">
+        <img src="images/logo.jpeg" alt="Logo MesEbooks" class="logo" width="60" height="60" loading="eager">
       </a>
     </div>
-    <h1>À propos</h1>
+    <h1><i class="fas fa-info-circle"></i> À propos</h1>
     <nav>
-      <a href="index.html">Accueil</a>
-      <a href="ebooks.html">Catalogue</a>
-      <a href="about.html">À propos</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html"><i class="fas fa-home"></i><span>Accueil</span></a>
+      <a href="ebooks.html"><i class="fas fa-book"></i><span>Catalogue</span></a>
+      <a href="e-premium.html"><i class="fas fa-crown"></i><span>E-Premium</span></a>
+      <a href="about.html" class="active"><i class="fas fa-info-circle"></i><span>À propos</span></a>
+      <a href="contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a>
     </nav>
   </header>
 

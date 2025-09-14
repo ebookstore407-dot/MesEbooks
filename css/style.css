@@ -1191,3 +1191,36 @@ main {
 .header {
   background: black;
 }
+
+/* Ajout des règles responsives générales */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Améliorations pour la fluidité */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Meilleure gestion des polices */
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
