@@ -75,11 +75,11 @@
             },
             onApprove: function(data, actions) {
                 return actions.order.capture().then(function(details) {
-                    // Créer un lien temporaire vers le PDF (valable 24h)
                     const orderID = details.id;
-                    const downloadURL = `ebooks/premium/${orderID}.pdf`;
+                    const ebookId = 'ebook1'; // Identifiant unique pour chaque ebook
+                    const downloadURL = `ebooks/premium/pdfs/${ebookId}.pdf`;
 
-                    // Rediriger vers la page de téléchargement avec les paramètres
+                    // Rediriger vers la page de téléchargement
                     window.location.href = `download.html?order=${orderID}&file=${encodeURIComponent(downloadURL)}`;
                 });
             },

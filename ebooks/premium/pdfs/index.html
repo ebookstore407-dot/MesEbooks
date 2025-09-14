@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="0;url=/">
+    <title>Accès non autorisé</title>
+</head>
+<body>
+    <p>Accès non autorisé</p>
+</body>
+</html>
+
+@echo off
+REM Configuration des permissions pour le dossier PDF sécurisé
+
+REM Créer le dossier s'il n'existe pas
+mkdir "C:\Users\HP\Desktop\MesEbooks\ebooks\premium\pdfs" 2>nul
+
+REM Configurer les permissions basiques
+echo y| cacls "C:\Users\HP\Desktop\MesEbooks\ebooks\premium\pdfs" /P %USERNAME%:F
+
+REM Vérifier que les permissions ont été appliquées
+dir "C:\Users\HP\Desktop\MesEbooks\ebooks\premium\pdfs"

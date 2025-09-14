@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Découvrez notre bibliothèque d'eBooks en ligne">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>Accueil - Mes eBooks</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/slider.css">
-  <link rel="stylesheet" href="css/background.css">
-  <link rel="stylesheet" href="css/hero.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Découvrez notre collection d'ebooks et de livres numériques premium">
+    <title>MesEbooks - Accueil</title>
+    <link rel="icon" href="images/logo.jpeg" type="image/jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Ajout du CSS pour le slider -->
+    <link rel="stylesheet" href="css/slider.css">
+    <script src="js/quotes.js" defer></script>
 </head>
 <body>
   <header>
@@ -32,32 +33,35 @@
   </header>
 
   <main>
-    <!-- Hero section avec slider -->
-    <section class="slider-container">
-      <!-- Slide 1 -->
-      <div class="slide slide-racisme active">
-        <div class="slide-content">
-          <h2>Le Racisme En Ligne: Comprendre</h2>
-          <p>Apprends tout sur le racisme moderne et surtout en ligne.</p>
+    <!-- Ajout du slider -->
+    <section class="slider-section">
+        <div class="slider-container">
+            <div class="slider">
+                <!-- Slide 1: Le racisme en ligne -->
+                <div class="slide">
+                    <img src="images/ebooks/cover.jpg" alt="Le racisme en ligne" loading="lazy">
+                    <div class="slide-info">
+                        <div class="slide-badge">Disponible</div>
+                        <h3>Le racisme en ligne</h3>
+                        <p>Une analyse approfondie du phénomène du racisme sur Internet et les réseaux sociaux. Découvrez les impacts et les solutions pour lutter contre ce fléau numérique.</p>
+                        <div class="slide-meta">
+                            <span><i class="fas fa-file-pdf"></i> Format PDF</span>
+                            <span><i class="fas fa-download"></i> Téléchargement gratuit</span>
+                        </div>
+                        <a href="ebooks.html" class="btn-slide">
+                            <i class="fas fa-book-open"></i>
+                            Lire maintenant
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Note: Les autres slides sont retirés car il n'y a qu'un seul ebook disponible actuellement -->
+            </div>
+            
+            <!-- Retrait des boutons de navigation car un seul slide -->
+            <!-- <button class="slider-btn prev">❮</button>
+            <button class="slider-btn next">❯</button> -->
         </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="slide slide-detox">
-        <div class="slide-content">
-          <h2>Detox Numérique</h2>
-          <p>Découvrez comment gérer vos habitudes d'écran pour une vie équilibrée.</p>
-        </div>
-      </div>
-
-      <!-- Navigation du slider -->
-      <button class="prev" aria-label="Précédent"></button>
-      <button class="next" aria-label="Suivant"></button>
-
-      <div class="slider-nav">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-      </div>
     </section>
 
     <!-- Section de bienvenue -->
@@ -66,10 +70,24 @@
       <p>Découvrez mes eBooks gratuits et téléchargez-les facilement.</p>
       <a href="ebooks.html" class="btn">Voir le catalogue</a>
     </section>
+
+    <!-- Section Citation -->
+    <section class="quote-section">
+        <div class="quote-container">
+            <div class="quote-display">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <blockquote id="quote-text"></blockquote>
+                <footer id="quote-author"></footer>
+                <i class="fas fa-quote-right quote-icon"></i>
+            </div>
+        </div>
+    </section>
 </main>
   <footer>
     <p>&copy; 2025 Mes eBooks en ligne. Tous droits réservés.</p>
   </footer>
+
+  <!-- Ajout du JavaScript pour le slider -->
   <script src="js/slider.js"></script>
 </body>
 </html>

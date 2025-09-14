@@ -646,7 +646,7 @@ main {
   margin: 2rem auto;
   border-radius: 12px;
   max-width: 1200px;
-  box-shadow: 0 8px 25px rgb(0 0 0 / 15%);
+  box-shadow: 0 8px 25px rgb(0, 0, 0 / 15%);
 }
 
 .banniere-content {
@@ -689,13 +689,13 @@ main {
 .banniere-image {
   flex: 1;
   min-width: 280px;
-    box-shadow: 0 8px 25px rgb(0 0 0 / 15%);
+    box-shadow: 0 8px 25px rgb(0, 0, 0 / 15%);
 }
 
 .banniere-image img {
   max-width: 100%;
   border-radius: 10px;
-  box-shadow: 0 5px 20px rgb(0 0 0 / 20%);
+  box-shadow: 0 5px 20px rgb(0, 0, 0 / 20%);
 }
 
 /* --- Responsive --- */
@@ -1418,3 +1418,74 @@ RedirectMatch 301 ^/ebooks/premium/(.*)$ /MesEbooks/ebooks/premium/$1
   Order Allow,Deny
   Deny from all
 </FilesMatch>
+/* Correction des problèmes de syntaxe */
+:root {
+    --header-height: 60px;
+    --content-padding: 1rem;
+    --primary-color: #004e92;
+    --secondary-color: #000428;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Correction des media queries */
+@media screen and (max-width: 768px) {
+    /* ...existing code... */
+}
+
+/* Citation Styles */
+.quote-section {
+    background: linear-gradient(135deg, #004e92, #000428);
+    padding: 4rem 2rem;
+    margin: 2rem 0;
+    color: white;
+}
+
+.quote-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.quote-display {
+    position: relative;
+    padding: 2rem 0;
+}
+
+#quote-text {
+    font-size: 1.8rem;
+    font-style: italic;
+    margin: 1rem 0;
+    transition: opacity 0.5s ease;
+    line-height: 1.4;
+}
+
+#quote-author {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    transition: opacity 0.5s ease;
+}
+
+.quote-icon {
+    font-size: 2rem;
+    opacity: 0.5;
+    margin: 1rem;
+}
+
+@media (max-width: 768px) {
+    #quote-text {
+        font-size: 1.4rem;
+    }
+    
+    #quote-author {
+        font-size: 1rem;
+    }
+    
+    .quote-icon {
+        font-size: 1.5rem;
+    }
+}

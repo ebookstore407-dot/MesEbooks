@@ -1,2 +1,9 @@
 Options -Indexes
+Order Deny,Allow
 Deny from all
+
+<FilesMatch "\.pdf$">
+    Order Allow,Deny
+    Allow from localhost
+    Require valid-user
+</FilesMatch>

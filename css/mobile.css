@@ -89,7 +89,6 @@
 }
 
 /* Optimisations spécifiques pour iPhone X et appareils similaires */
-@media screen and (width <= 428px) {
   /* Ajustements du header */
   header {
     padding: 0.3rem 0.2rem;
