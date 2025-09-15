@@ -1,118 +1,101 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="En savoir plus sur MesEbooks et notre mission">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>À propos - Mes eBooks</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/background.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-
-    /* Styles spécifiques à la page À propos */
-
-    /* SECTION A PROPOS */
-    .about-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      padding: 2rem;
-    }
-
-    .about-card {
-      flex: 1 1 calc(50% - 20px); /* 2 cartes par ligne */
-      min-height: 250px;
-      border-radius: 15px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem 1.5rem;
-      color: #fff;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .about-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    }
-
-    .about-card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-
-    .about-card p {
-      max-width: 500px;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    /* Capsules personnalisées */
-    .passion { background: linear-gradient(135deg, indigo, #4b0082); }
-    .vision { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); } /* bleu-noir */
-    .engagement { background: linear-gradient(135deg, #0575e6, #00f260); } /* bleu-vert frais */
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .about-card {
-        flex: 1 1 100%; /* pleine largeur sur mobile */
-      }
-      .about-card h3 { font-size: 1.5rem; }
-      .about-card p { font-size: 0.95rem; }
-    }
-
-    footer {
-      background: #222;
-      color: #aaa;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Découvrez qui nous sommes et notre mission de partage de connaissances numériques">
+    <title>À propos - MesEbooks</title>
+    <link rel="icon" href="images/logo.jpeg" type="image/jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <div class="logo-container">
-      <a href="index.html" title="Retour à l'accueil">
-        <img src="images/logo.jpeg" alt="Logo MesEbooks" class="logo" width="60" height="60" loading="eager">
-      </a>
-    </div>
-    <h1><i class="fas fa-info-circle"></i> À propos</h1>
-    <nav>
-      <a href="index.html"><i class="fas fa-home"></i><span>Accueil</span></a>
-      <a href="ebooks.html"><i class="fas fa-book"></i><span>Catalogue</span></a>
-      <a href="e-premium.html"><i class="fas fa-crown"></i><span>E-Premium</span></a>
-      <a href="about.html" class="active"><i class="fas fa-info-circle"></i><span>À propos</span></a>
-      <a href="contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a>
-    </nav>
-  </header>
+    <header>
+        <div class="logo-container">
+            <a href="index.html" title="Retour à l'accueil">
+                <img src="images/logo.jpeg" alt="Logo MesEbooks" class="logo" width="60" height="60" loading="eager">
+            </a>
+        </div>
+        <h1><i class="fas fa-info-circle"></i> À propos</h1>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i><span>Accueil</span></a>
+            <a href="ebooks.html"><i class="fas fa-book"></i><span>Catalogue</span></a>
+            <a href="e-premium.html"><i class="fas fa-crown"></i><span>E-Premium</span></a>
+            <a href="about.html" class="active"><i class="fas fa-info-circle"></i><span>À propos</span></a>
+            <a href="contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a>
+        </nav>
+    </header>
 
-  <main class="about-section">
-    <div class="about-card passion">
-      <h3>📖 Ma Passion</h3>
-      <p>J’adore écrire et transmettre des idées. Les eBooks sont pour moi un moyen de partager mes histoires et mes réflexions.</p>
-    </div>
+    <main class="about-main">
+        <!-- Section Hero -->
+        <section class="about-hero">
+            <div class="about-hero-content">
+                <h1>Notre Histoire</h1>
+                <p class="subtitle">Partager le savoir à travers le numérique</p>
+            </div>
+        </section>
 
-    <div class="about-card vision">
-      <h3>🌍 Ma Vision</h3>
-      <p>Créer une communauté de lecteurs curieux et avides de savoir, en rendant la lecture accessible à tous.</p>
-    </div>
+        <!-- Section Mission -->
+        <section class="mission-section">
+            <div class="container">
+                <h2><i class="fas fa-bullseye"></i> Notre Mission</h2>
+                <div class="mission-content">
+                    <div class="mission-text">
+                        <p>MesEbooks a pour mission de rendre accessible le savoir à travers des ebooks de qualité. Nous croyons en la puissance de la lecture numérique pour enrichir les connaissances et ouvrir les esprits.</p>
+                    </div>
+                    <div class="mission-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Gratuit</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Disponible</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="about-card engagement">
-      <h3>🤝 Mon Engagement</h3>
-      <p>Offrir gratuitement du contenu de qualité pour inspirer, éduquer et divertir le plus grand nombre.</p>
-    </div>
-  </main>
+        <!-- Section Valeurs -->
+        <section class="values-section">
+            <div class="container">
+                <h2><i class="fas fa-heart"></i> Nos Valeurs</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <i class="fas fa-book-open"></i>
+                        <h3>Accessibilité</h3>
+                        <p>Des ebooks accessibles à tous, partout et à tout moment</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-award"></i>
+                        <h3>Qualité</h3>
+                        <p>Un contenu soigneusement sélectionné et vérifié</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Communauté</h3>
+                        <p>Une communauté de lecteurs passionnés</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <footer>
-    <p>&copy; 2025 Mes eBooks en ligne. Tous droits réservés.</p>
-  </footer>
+        <!-- Section Contact -->
+        <section class="about-contact">
+            <div class="container">
+                <h2><i class="fas fa-envelope"></i> Restons en Contact</h2>
+                <p>Vous avez des questions ou des suggestions ? N'hésitez pas à nous contacter.</p>
+                <a href="contact.html" class="btn-primary">Contactez-nous</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MesEbooks. Tous droits réservés.</p>
+    </footer>
 </body>
 </html>
